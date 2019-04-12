@@ -1,0 +1,15 @@
+<ng-container>
+    <div class="container">
+        <h1>Angular Task</h1>
+        <div class="col-md-4">
+            <div class="main-container">
+                <div class="divtext" contentEditable [mention]="items" [mentionConfig]="{triggerChar:'{', disableSort:true }" [innerHTML]="str" #taskTextarea style="white-space: pre-wrap;min-height: 55px;"></div>
+            </div>
+            <button (click)="onChangeSaveData(taskTextarea.innerText)" class="btn btn-default btn-block"><span>+ </span> Add Button</button>
+        </div>
+        <div class="col-md-1" style="cursor:pointer;" (click)="clearLocalStorage()"><span class="glyphicon glyphicon-trash"></span></div>
+        <div class="col-md-4">
+            <div style="white-space: pre-wrap">{{ displayContent }}</div>
+        </div>
+    </div>
+</ng-container>
